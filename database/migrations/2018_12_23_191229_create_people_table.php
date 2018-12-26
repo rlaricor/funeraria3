@@ -14,13 +14,18 @@ class CreatePeopleTable extends Migration
     public function up()
     {
         Schema::create('people', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->foreign('id')->references('id')->on('person_types');
-            $table->enum('name','50');
+            $table->increments('id');
+            $table->integer('person_type_id')->unsigned();
+            $table->enum('person_condition',['Natural','Juridica'])->default('Natural');
             $table->string('document_id','20')->unique();
-            $table->string('name','50');
+            $table->string('name','100');
             $table->string('last_name','50');
+            $table->integer('user_id');
+            $table->softDeletes();
             $table->timestamps();
+
+            //relations
+            $table->foreign('person_type_id')->references('id')->on('person_types');
         });
     }
 

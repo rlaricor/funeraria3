@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class InsuranceType extends Model
+class PlaceRegistration extends Model
 {
     public function service()
     {
-        return $this->belongsToMany('App\Service');
+        return $this->hasMany('App\Service');
     }
-
 }

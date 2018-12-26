@@ -15,7 +15,14 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('person_id')->unsigned();
+            $table->string('address', 150);
+            $table->integer('user_id');
+            $table->softDeletes();
             $table->timestamps();
+
+            //relations
+            $table->foreign('person_id')->references('id')->on('people');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFilesTable extends Migration
+class CreateInsuranceTypeServiceTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,14 @@ class CreateFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('files', function (Blueprint $table) {
+        Schema::create('insurance_type_service', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('insurance_type_id')->unsigned();
             $table->integer('service_id')->unsigned();
-            $table->integer('file_type_id')->unsigned();
-            $table->string('filename', 100);
-            $table->string('uri', 200);
-            $table->integer('user_id');
-            $table->softDeletes();
             $table->timestamps();
 
             //relations
-            $table->foreign('file_type_id')->references('id')->on('file_types');
+            $table->foreign('insurance_type_id')->references('id')->on('insurance_types');
             $table->foreign('service_id')->references('id')->on('services');
         });
     }
@@ -36,6 +32,6 @@ class CreateFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('insurance_type_service');
     }
 }

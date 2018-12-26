@@ -25,4 +25,9 @@ class Service extends Model
     {
         return $this->belongsToMany('App\Person');
     }
+
+    public function place_registration()
+    {
+        return $this->belongsTo('App\PlaceRegistration');
+    }
 }

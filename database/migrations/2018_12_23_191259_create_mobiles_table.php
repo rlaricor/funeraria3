@@ -15,7 +15,14 @@ class CreateMobilesTable extends Migration
     {
         Schema::create('mobiles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('person_id')->unsigned();
+            $table->string('mobile',11);
+            $table->integer('useri_id');
+            $table->softDeletes();
             $table->timestamps();
+
+            //relations
+            $table->foreign('person_id')->references('id')->on('people');
         });
     }
 

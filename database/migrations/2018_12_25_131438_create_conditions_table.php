@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmailsTable extends Migration
+class CreateConditionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateEmailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('emails', function (Blueprint $table) {
+        Schema::create('conditions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('person_id')->unsigned();
-            $table->string('email',60);
-            $table->integer('useri_id');
+            $table->integer('service_id')->unsigned();
+            $table->string('condition', 100);
+            $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();
 
             //relations
-            $table->foreign('person_id')->references('id')->on('people');
+            $table->foreign('service_id')->references('id')->on('services');
         });
     }
 
@@ -33,6 +33,6 @@ class CreateEmailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emails');
+        Schema::dropIfExists('conditions');
     }
 }
