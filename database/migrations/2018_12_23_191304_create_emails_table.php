@@ -17,7 +17,7 @@ class CreateEmailsTable extends Migration
             $table->increments('id');
             $table->integer('person_id')->unsigned();
             $table->string('email',60);
-            $table->integer('useri_id');
+            $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();
 

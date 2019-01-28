@@ -17,7 +17,7 @@ class CreateMobilesTable extends Migration
             $table->increments('id');
             $table->integer('person_id')->unsigned();
             $table->string('mobile',11);
-            $table->integer('useri_id');
+            $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();
 

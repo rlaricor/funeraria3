@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Funeraria Ramos',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => 'Funeraria <b>Ramos</b>',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => 'F<b>Ramos</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,81 +108,38 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'SERVICIOS',
         [
-            'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Nuevo Servicio',
+            'url'         => 'admin/service/create',
             'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
         ],
-        'ACCOUNT SETTINGS',
         [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
+            'text'        => 'Listar Servicios',
+            'url'         => 'admin/service/list',
+            'icon'        => 'file',
+        ],
+        'PERSONAS',
+        [
+            'text' => 'Buscar Persona',
+            'url'  => 'admin/people/search',
             'icon' => 'user',
         ],
+        'TRABAJADORES',
         [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
+            'text'       => 'Crear Trabajador',
+            'url'        => 'admin/users/create'
         ],
         [
-            'text'    => 'Multilevel',
-            'icon'    => 'share',
-            'submenu' => [
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Level One',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Level Two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Level Two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'Level Three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'Level One',
-                    'url'  => '#',
-                ],
-            ],
+            'text'       => 'Listar Trabajadores',
+            'url'        => 'admin/users/list'
         ],
-        'LABELS',
+        'REPORTES',
         [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
-        ],
+            'text'       => 'Servicios por pagar',
+            'url'        => 'admin/reports/'
+        ]
+
     ],
 
     /*
