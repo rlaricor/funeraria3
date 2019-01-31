@@ -24,3 +24,6 @@ Route::get('dashboard', function () {
 });
 
 Route::get('/service/create','ServiceController@create');
+Route::post('/service/create','ServiceController@store');
+
+Route::resource('employee','EmployeeController');

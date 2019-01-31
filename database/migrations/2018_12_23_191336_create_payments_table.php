@@ -19,7 +19,7 @@ class CreatePaymentsTable extends Migration
             $table->integer('proof_payment_type_id')->unsigned()->nullable();
             $table->integer('number_proof');
             $table->float('amount',6,2);
-            $table->string('observation', 100);
+            $table->longtext('observation');
             $table->integer('user_id');
             $table->softDeletes();
             $table->timestamps();

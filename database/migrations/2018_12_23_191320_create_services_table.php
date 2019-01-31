@@ -18,9 +18,9 @@ class CreateServicesTable extends Migration
             $table->enum('tipo', ['Proforma', 'Servicio'])->default('Servicio');
             $table->integer('contract_number')->nullable();
             $table->date('contract_date')->nullable();
-            $table->date('death_date')->nullable();
+            $table->integer('employee_id')->unsigned();
             $table->integer('place_registration_id')->unsigned();
-            $table->string('registration_observation','100')->nullable();
+            $table->longText('registration_observation','100')->nullable();
             $table->float('total_amount',6,2)->nullable();
             $table->string('insurance_charged', 100)->nullable();
             $table->integer('user_id');
@@ -28,6 +28,7 @@ class CreateServicesTable extends Migration
             $table->timestamps();
 
             //relations
+            $table->foreign('employee_id')->references('id')->on('employees');
             $table->foreign('place_registration_id')->references('id')->on('place_registrations');
 
         });

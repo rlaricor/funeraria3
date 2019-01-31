@@ -20,4 +20,9 @@ class ServiceController extends Controller
     {
         return view('admin.service.create');
     }
+
+    public function store(Request $request)
+    {
+        return "Hello";
+    }
 }

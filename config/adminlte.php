@@ -128,11 +128,11 @@ return [
         'TRABAJADORES',
         [
             'text'       => 'Crear Trabajador',
-            'url'        => 'admin/users/create'
+            'url'        => 'admin/employee/create'
         ],
         [
             'text'       => 'Listar Trabajadores',
-            'url'        => 'admin/users/list'
+            'url'        => 'admin/employee/list'
         ],
         'REPORTES',
         [
